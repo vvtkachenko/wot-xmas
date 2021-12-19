@@ -23,7 +23,7 @@ export class AppComponent {
   public getCost() {
     console.log(this.baseCost, this.availableToys, this.totalToys);
     
-    this.cost = Math.floor(this.baseCost / (1 - (this.availableToys/this.totalToys)) - 100);
+    this.cost = Math.floor(this.baseCost / (1 - (this.availableToys/this.totalToys)));
   }
 
   

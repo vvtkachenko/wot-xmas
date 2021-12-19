@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/randomizer'),
+      dir: require('path').join(__dirname, './coverage/wot-xmas'),
       subdir: '.',
       reporters: [
         { type: 'html' },

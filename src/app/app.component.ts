@@ -11,20 +11,35 @@ export class AppComponent {
 
   public baseCost: number = 0;
 
-  public availableToys: number = 0;
+  public startToys: number = 0;
 
-  public  totalToys: number = 0;
+  public totalToys: number = 0;
+
+  public currentToy: number = 0;
+
+  public goalToys: number = 0;
 
   public cost: number = 0;
 
   constructor () {
   }
 
-  public getCost() {
-    console.log(this.baseCost, this.availableToys, this.totalToys);
-    
-    this.cost = Math.floor(this.baseCost / (1 - (this.availableToys/this.totalToys)));
+  public getSingleToyCost () {
+    this.currentToy = this.startToys;
+    return Math.floor(this.baseCost / (1 - (this.currentToy/this.totalToys)));
   }
 
+  public getCost() {
+    if (this.goalToys) {
+      this.cost = 0;
+      for (let index = this.currentToy; index <= this.goalToys; index++) {
+        this.currentToy = index;
+        this.cost += this.getSingleToyCost();
+      }
+    } else {
+      this.cost = this.getSingleToyCost();
+    }
+    
+  }
   
 }

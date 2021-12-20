@@ -363,11 +363,15 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Іграшок в наявності</mat-label>
-          <input matInput [(ngModel)]="availableToys" name="availableToys">
+          <input matInput [(ngModel)]="startToys" name="startToys">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>До скількох згенерити</mat-label>
+          <input matInput [(ngModel)]="goalToys" name="goalToys">
         </mat-form-field>
         <button mat-raised-button (click)="getCost();">Порахувати</button>
 
-        <mat-card>{{cost}}</mat-card>
+        <mat-card>Середня ціна: {{cost}}</mat-card>
       </form>
   </mat-card> 
 
